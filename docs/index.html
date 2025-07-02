@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarter OS - A Professional Fake-OS Powered by Python 3</title>
+    <style>
+        :root {
+            --github-bg: #ffffff;
+            --github-text: #24292f;
+            --github-border: #d0d7de;
+            --github-code-bg: #f6f8fa;
+            --github-link: #0969da;
+            --github-header: #0969da;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.5;
+            color: var(--github-text);
+            background-color: var(--github-bg);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        h1 {
+            padding-bottom: 0.3em;
+            font-size: 2em;
+            border-bottom: 1px solid var(--github-border);
+            color: var(--github-header);
+        }
+
+        h2 {
+            padding-bottom: 0.3em;
+            font-size: 1.5em;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        a {
+            color: var(--github-link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: var(--github-code-bg);
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .badges {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .badge {
+            height: 20px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--github-border);
+            text-align: center;
+            color: #57606a;
+            font-size: 14px;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #57606a;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body class="markdown-body">
+    <div class="center">
+        <h1>Quarter OS</h1>
+        
+        <img src="../qos_512.ico" alt="QuarterOS Logo" class="logo">
+        
+        <p>A Professional <strong>Fake-OS</strong> Powered by Python 3</p>
+        
+        <div class="badges">
+            <img src="https://img.shields.io/github/repo-size/ElofHew/QOS" alt="GitHub Repo Size" class="badge">
+            <img src="https://img.shields.io/github/stars/ElofHew/QOS?style=flat" alt="GitHub Repo Stars" class="badge">
+            <img src="https://img.shields.io/github/license/ElofHew/QOS?style=flat" alt="Github License" class="badge">
+            <img src="https://img.shields.io/github/commit-activity/t/ElofHew/QOS" alt="GitHub Commit activity" class="badge">
+            <img src="https://img.shields.io/github/last-commit/ElofHew/QOS" alt="GitHub Last Commit" class="badge">
+            <img src="https://img.shields.io/github/created-at/ElofHew/QOS" alt="GitHub Created At" class="badge">
+            <img src="https://img.shields.io/github/issues/ElofHew/QOS" alt="GitHub Issues" class="badge">
+            <img src="https://img.shields.io/github/v/release/ElofHew/QOS" alt="GitHub Release" class="badge">
+        </div>
+    </div>
+
+    <h2>介绍</h2>
+    <p>Quarter OS 是一款基于 Python 3 的伪操作系统，简称 <strong>QOS</strong>，由 <a href="https://github.com/ElofHew">ElofHew</a> 开发。</p>
+    
+    <p class="note">（注：QOS是Quarter Operation System的缩写，与网络技术中的"QoS"（Quality of Service，IP网络服务质量保证）无关。）</p>
+    
+    <p>&copy; 2025 <a href="https://t.me/oakstd">Oak Studio</a> 版权所有。</p>
+
+    <div>
+        <h2>文档列表</h2>
+        <ul>
+            <li><a href="install_python3.html" target="_blank" class="btn">安装 Python 3</a></li>
+            <li><a href="set_venv.html" target="_blank" class="btn">配置Python3虚拟环境</a></li>
+            <li><a href="change_pip_mirror.html" target="_blank" class="btn">更换pip镜像源</a></li>
+            <li><a href="quick_use.html" target="_blank" class="btn">快速使用指南</a></li>
+            <li><a href="qap_make.html" target="_blank" class="btn">QAP软件包开发指南</a></li>
+            <li><a href="sap_make.html" target="_blank" class="btn">SAP软件包开发指南</a></li>
+        </ul>
+    </div>
+
+    <h2>一、配置Quarter OS</h2>
+    <p>详见 <a href="quick_use.html">Quarter OS 快速使用指南</a></p>
+
+    <h2>二、简单方法</h2>
+    <p>安装好Python 3.10及以上版本后，<strong>可以直接在常规命令行中运行</strong> <code>run.py</code> （Windows使用PowerShell，Linux/macOS使用自带的终端）</p>
+
+    <h2>三、补充说明</h2>
+    <p>Quarter OS 当前版本处于开发阶段（Alpha），功能不完善，如有bug或建议，欢迎提交 issue。</p>
+    
+    <p>目前不接受任何Pull Request，因为当前版本属于基础框架搭建，不需要过多开发者参与。</p>
+    
+    <p>正式版预计于7月中上旬（7月15日前）发布，敬请期待。</p>
+
+    <div class="footer">
+        <p>Written by <a href="https://github.com/ElofHew">ElofHew</a>.</p>
+        <p>&copy; 2025 <a href="https://t.me/oakstd">Oak Studio</a>. All rights reserved.</p>
+    </div>
+</body>
+</html>

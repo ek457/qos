@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarter OS 软件包开发文档</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        :root {
+            --github-bg: #ffffff;
+            --github-text: #24292f;
+            --github-border: #d0d7de;
+            --github-code-bg: #f6f8fa;
+            --github-link: #0969da;
+            --github-header: #0969da;
+            --github-alert-tip: #ddf4ff;
+            --github-alert-note: #ddf4ff;
+            --github-alert-border-tip: #54aeff;
+            --github-alert-border-note: #54aeff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.5;
+            color: var(--github-text);
+            background-color: var(--github-bg);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--github-header);
+        }
+
+        h1 {
+            padding-bottom: 0.3em;
+            font-size: 2em;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        h2 {
+            padding-bottom: 0.3em;
+            font-size: 1.5em;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        a {
+            color: var(--github-link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: var(--github-code-bg);
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        }
+
+        pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: var(--github-code-bg);
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+            display: block;
+            overflow: auto;
+        }
+
+        th, td {
+            padding: 6px 13px;
+            border: 1px solid var(--github-border);
+        }
+
+        th {
+            font-weight: 600;
+            background-color: var(--github-code-bg);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f6f8fa;
+        }
+
+        blockquote {
+            padding: 0 1em;
+            color: #57606a;
+            border-left: 0.25em solid var(--github-border);
+            margin: 16px 0;
+        }
+
+        .alert {
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-left: 4px solid;
+            border-radius: 4px;
+        }
+
+        .alert-tip {
+            background-color: var(--github-alert-tip);
+            border-color: var(--github-alert-border-tip);
+        }
+
+        .alert-note {
+            background-color: var(--github-alert-note);
+            border-color: var(--github-alert-border-note);
+        }
+
+        .alert-title {
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--github-border);
+            text-align: center;
+            color: #57606a;
+            font-size: 14px;
+        }
+
+        .doc-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: var(--github-code-bg);
+            border-radius: 6px;
+        }
+        
+        .package-comparison {
+            margin: 30px 0;
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .comparison-header {
+            padding: 10px 15px;
+            background-color: var(--github-header);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-row {
+            display: flex;
+            border-bottom: 1px solid var(--github-border);
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-cell {
+            flex: 1;
+            padding: 12px 15px;
+        }
+        
+        .comparison-cell:first-child {
+            font-weight: 600;
+            background-color: #f6f8fa;
+        }
+    </style>
+</head>
+<body class="markdown-body">
+    <!-- QAP Package Development Document -->
+    <h1>Quarter OS 软件包开发帮助文档</h1>
+    
+    <h2>软件包概述</h2>
+    <p>在Quarter OS中，提供了第三方软件包管理器 <code>Biscuit</code>，它可以帮助用户轻松地安装、卸载第三方软件包。</p>
+    <p>Biscuit 软件包管理器支持的软件包类型为 <code>.qap</code>。</p>
+    <p><strong>QAP</strong>，全称为 <strong>Quarter OS Application Package</strong>，是一种适用于Biscuit Package Manager for Quarter OS的软件包格式。</p>
+    
+    <h2>软件包打包封装</h2>
+    
+    <h3>软件包封装器</h3>
+    <p>QAP 软件包封装器位于 <code>devtool</code> 目录下，可以将Python程序打包为QAP软件包。</p>
+    
+    <h3>软件包封装原理</h3>
+    <p>使用 <code>zipfile</code> 模块将所有程序文件压缩成 <code>.zip</code> 压缩包，并重命名为 <code>packagename_version.qap</code> 。</p>
+    
+    <h3>软件包结构</h3>
+    <pre><code class="language-txt">QAP_Package/
+├── [主要文件] main.py
+├── [主要文件] info.json
+├── README.md
+├── [其他文件]
+└── ……</code></pre>
+    
+    <h3>软件包主程序</h3>
+    <pre><code class="language-python">import requests
+
+def get_data():
+    url = "https://example.com/api/data"
+    response = requests.get(url)
+    return response.json()
+
+def main():
+    data = get_data()
+    print(data)
+
+if __name__ == "__main__":
+    main()</code></pre>
+    
+    <h3>软件包基本信息文件</h3>
+    <pre><code class="language-json">{
+    "name": "your_package_name",
+    "version": "1.0",
+    "author": "your_name",
+    "description": "The description of your package",
+    "category": "tools",
+    "min_python_version": "3.10",
+    "target_python_version": "3.12",
+    "comptb_os": "windows",
+    "biscuit_version": "1.0",
+    "tags": [
+        "tools",
+        "python"
+    ],
+    "depends": [
+        "requests"
+    ]
+}</code></pre>
+    
+    <div class="alert alert-tip">
+        <p class="alert-title">TIP</p>
+        <p>当你使用 <code>qap_maker.py</code> 工具打包时，如果你还没准备好 <code>info.json</code> 文件，<code>qap_maker.py</code> 工具会帮助你在封装器中生成一个。</p>
+    </div>
+    
+    <h3>软件包名称规范</h3>
+    <ul>
+        <li>只能包含 <strong>小写字母，数字和下划线</strong></li>
+        <li>必须以 <strong>小写字母</strong> 开头</li>
+        <li>示例：<code>example</code>, <code>my_package</code>, <code>demo_package2</code></li>
+    </ul>
+    
+    <h3>软件包分类</h3>
+    <ul>
+        <li><code>Tools</code>：工具类</li>
+        <li><code>Games</code>：游戏类</li>
+        <li><code>Amusement</code>：娱乐类</li>
+        <li><code>Education</code>：教育类</li>
+        <li><code>Others</code>：其他类</li>
+    </ul>
+    
+    <h2>第三方软件包程序开发</h2>
+    
+    <h3>头部注释</h3>
+    <pre><code class="language-python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+@Name: your_package_name
+@Version: 1.0
+@Author: Your_Name
+@Description: The description of your package.
+"""</code></pre>
+    
+    <h3>错误处理</h3>
+    <pre><code class="language-python">try:
+    # 你的程序代码
+except KeyboardInterrupt:
+    print("Program terminated by user.")
+    exit()
+except Exception as e:
+    print("An error occurred:", e)
+    exit()</code></pre>
+    
+    <h3>程序测试</h3>
+    <p>测试版本命名规范：<code>my_package_dev</code>, <code>my_package_test</code>, <code>my_package_beta</code></p>
+    
+    <h2>第三方软件包发布</h2>
+    <p>当前支持本地安装：<code>biscuit install /path/to/your_package.qap</code></p>
+    
+    <div class="package-comparison">
+        <div class="comparison-header">QAP 与 SAP 软件包比较</div>
+        <div class="comparison-row">
+            <div class="comparison-cell">软件包格式</div>
+            <div class="comparison-cell">.qap (Quarter OS)</div>
+            <div class="comparison-cell">.sap (PY OS Improved)</div>
+        </div>
+        <div class="comparison-row">
+            <div class="comparison-cell">主程序文件</div>
+            <div class="comparison-cell">main.py</div>
+            <div class="comparison-cell">main.py</div>
+        </div>
+        <div class="comparison-row">
+            <div class="comparison-cell">依赖管理</div>
+            <div class="comparison-cell">info.json 中的 depends 字段</div>
+            <div class="comparison-cell">requirements.txt 文件</div>
+        </div>
+        <div class="comparison-row">
+            <div class="comparison-cell">目录结构</div>
+            <div class="comparison-cell">扁平结构</div>
+            <div class="comparison-cell">data/, resources/, depends/ 等目录</div>
+        </div>
+        <div class="comparison-row">
+            <div class="comparison-cell">最低Python版本</div>
+            <div class="comparison-cell">3.10</div>
+            <div class="comparison-cell">3.8</div>
+        </div>
+    </div>
+</body>
+</html>

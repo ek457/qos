@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pip 换源帮助 - Quarter OS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        :root {
+            --github-bg: #ffffff;
+            --github-text: #24292f;
+            --github-border: #d0d7de;
+            --github-code-bg: #f6f8fa;
+            --github-link: #0969da;
+            --github-header: #0969da;
+            --github-alert: #ddf4ff;
+            --github-alert-border: #54aeff;
+            --github-warning: #fff8c5;
+            --github-warning-border: #eac54f;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.5;
+            color: var(--github-text);
+            background-color: var(--github-bg);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        h1 {
+            padding-bottom: 0.3em;
+            font-size: 2em;
+            border-bottom: 1px solid var(--github-border);
+            color: var(--github-header);
+        }
+
+        h2 {
+            padding-bottom: 0.3em;
+            font-size: 1.5em;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        a {
+            color: var(--github-link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: var(--github-code-bg);
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        }
+
+        pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: var(--github-code-bg);
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+
+        blockquote {
+            padding: 0 1em;
+            color: #57606a;
+            border-left: 0.25em solid var(--github-border);
+            margin: 16px 0;
+        }
+
+        .alert {
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-left: 4px solid var(--github-alert-border);
+            background-color: var(--github-alert);
+            border-radius: 4px;
+        }
+
+        .warning {
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-left: 4px solid var(--github-warning-border);
+            background-color: var(--github-warning);
+            border-radius: 4px;
+        }
+
+        .alert-title {
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--github-border);
+            text-align: center;
+            color: #57606a;
+            font-size: 14px;
+        }
+
+        .mirror-list {
+            margin: 20px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .mirror-item {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--github-border);
+        }
+
+        .mirror-item:last-child {
+            border-bottom: none;
+        }
+
+        .mirror-name {
+            font-weight: 600;
+            display: inline-block;
+            min-width: 80px;
+        }
+
+        hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: var(--github-border);
+            border: 0;
+        }
+    </style>
+</head>
+<body class="markdown-body">
+    <h1>pip 换源帮助</h1>
+
+    <p>因为有些地区的网络环境连接到Pypi官方源不稳定或速度很慢（比如中国大陆），所以您可以根据您所在的网络环境<strong>自行决定</strong>是否换源以提升您在安装模块时的网络连接体验</p>
+
+    <h2>常用镜像源</h2>
+
+    <ul class="mirror-list">
+        <li class="mirror-item">
+            <span class="mirror-name">Pypi官方源</span>
+            <a href="https://pypi.org/simple/">https://pypi.org/simple/</a> （用于切换回官方源）
+        </li>
+        <li class="mirror-item">
+            <span class="mirror-name">清华源</span>
+            <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a>
+        </li>
+        <li class="mirror-item">
+            <span class="mirror-name">阿里源</span>
+            <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a>
+        </li>
+        <li class="mirror-item">
+            <span class="mirror-name">华为源</span>
+            <a href="https://repo.huaweicloud.com/repository/pypi/simple/">https://repo.huaweicloud.com/repository/pypi/simple/</a>
+        </li>
+        <li class="mirror-item">
+            <span class="mirror-name">腾讯源</span>
+            <a href="https://mirrors.cloud.tencent.com/pypi/simple/">https://mirrors.cloud.tencent.com/pypi/simple/</a>
+        </li>
+        <li class="mirror-item">
+            <span class="mirror-name">中科大源</span>
+            <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a>
+        </li>
+    </ul>
+
+    <h2>通用方法</h2>
+
+    <div class="alert">
+        <p class="alert-title">注意</p>
+        <p>下面的 <code>mirror_url</code> 请替换为镜像站的URL</p>
+    </div>
+
+    <p>在<strong>虚拟环境之外</strong>，首先先更新一遍 pip：</p>
+    <pre><code class="language-bash">python -m pip install --upgrade pip</code></pre>
+
+    <p>如果网络质量不佳，可以先临时使用国内源更新pip：</p>
+    <pre><code class="language-bash">python -m pip install -i &lt;mirror_url&gt; --upgrade pip</code></pre>
+
+    <p>运行以下命令来切换默认镜像源：</p>
+    <pre><code class="language-bash">pip config set global.index-url &lt;mirror_url&gt;</code></pre>
+
+    <p>如果您只是想临时使用镜像源，可以运行以下命令：</p>
+    <pre><code class="language-bash">pip install -i &lt;mirror_url&gt; &lt;package_name&gt;
+# &lt;package_name&gt; 是你要安装的包的名称</code></pre>
+
+    <p>如果你想同时保存多个镜像源，可以运行以下命令：</p>
+    <pre><code class="language-bash">pip config set global.extra-index-url "&lt;url1&gt; &lt;url2&gt;..."
+# &lt;url1&gt; &lt;url2&gt;... 是你要添加的镜像源的URL
+# 注意，在本命令中，URL请加英文双引号
+
+# 例如：
+pip config set global.extra-index-url "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple" "https://mirrors.aliyun.com/pypi/simple/"
+# 这条命令会将清华源和阿里源添加到镜像源列表中</code></pre>
+
+    <h2>常见问题</h2>
+
+    <h3>如何查看当前的镜像源？</h3>
+    <pre><code class="language-bash">pip config list</code></pre>
+
+    <h3>如何清空已添加的镜像源列表？</h3>
+    <pre><code class="language-bash">pip config unset global.index-url</code></pre>
+    
+    <div class="warning">
+        <p class="alert-title">警告</p>
+        <p>使用本命令后请重新设置镜像源，否则可能导致后续 pip 在安装包时出现错误。</p>
+    </div>
+
+    <div class="footer">
+        <p>Written by <a href="https://github.com/ElofHew">ElofHew</a>.</p>
+        <p>&copy; 2025 <a href="https://t.me/oakstdcn">Oak Studio</a>. All rights reserved.</p>
+    </div>
+</body>
+</html>
