@@ -165,7 +165,7 @@ a, a:hover, a:active, a:visited {
 }
 
 .shots-container img {
-    max-width: 400px;
+    width: 100%;
     border-radius: 10px;
 }
 
