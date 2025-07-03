@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="获取Quarter OS激活码，并在Quarter OS安装成功后激活。" />
+        <meta name="keywords" content="OakStudio,QOS,QuarterOS,LeafBootManager,ElofHew,Dan_Evan,Python,C++,HTML,CSS,JavaScript,开源,开源软件,开源项目,开源社区,Bilibili,GitHub,Gitee,B站,GPLv3,MIT,Apache,GNU,Linux,Windows" />
+        <meta name="author" content="ElofHew" />
+        <meta name="robots" content="index,follow" />
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+        <link type="text/css" href="style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" />
+        <title>Quarter OS - 获取激活码</title>
+    </head>
+    <body>
+        <div class="header">
+            <b>OakStudio</b>
+            <div class="header-right">
+                <a href="https://github.com/ElofHew/QOS/">GitHub</a>
+                <a href="docs/">文档</a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <h1>激活 Quarter OS</h1>
+            </div>
+            <div class="get-code">
+                <div class="get-code-top">
+                    <h2>获取激活码</h2>
+                    <p>在您安装Quarter OS后，您需要访问本页面获取激活码，激活码将用于激活Quarter OS。</p>
+                </div>
+                <div class="get-code-main">
+                    <p>请在下方选择您想激活的Quarter OS版本<br/>然后点击<b>“获取”</b></p>
+                    <p>激活码1分钟内只能获取一次<br />如遇问题可尝试刷新页面</p>
+                    <p>激活码一机一码，请妥善保管。</p>
+                    <div class="select-box">
+                        <select id="select-os">
+                            <option value="S">试用版</option>
+                            <option value="H" selected>家庭版</option>
+                            <option value="P">专业版</option>
+                            <option value="U">旗舰版</option>
+                            <option value="LTS">长期支持版</option>
+                        </select>
+                        <button id="get-code-btn">获取</button>
+                        <input type="text" id="code-input" placeholder="激活码生成区" />
+                        <script src="getcode.js"></script>
+                    </div>
+                </div>
+                <div class="get-code-pk">
+                    <h2 style="text-align: center;">不同版本对比</h2>
+                    <ul>
+                        <li><b>试用版</b>（Starter Edition，代号S）：提供最基础的功能，适用于想要体验Quarter OS的用户。</li>
+                        <li><b>家庭版</b>（Home Edition，代号H）：提供大部分的功能，能够满足基本使用需求，适用于普通用户。</li>
+                        <li><b>专业版</b>（Professional Edition，代号P）：提供近乎所有的功能，以及内置应用的高级选项，适用于开发人员和高级用户。</li>
+                        <li><b>旗舰版</b>（Ultimate Edition，代号U）：提供所有功能，拥有最完整的体验，适用于高级用户。</li>
+                        <li><b>长期支持版</b>（Long Term Support Edition，代号LTS）：提供长期支持，主要体现在Biscuit软件安装源和软件更新。</li>
+                    </ul>
+                </div>
+                <div class="get-code-bottom">
+                    <h2>赞助开发者</h2>
+                    <p>Quarter OS开源免费，但开发者的工作量是有限的，如果您觉得Quarter OS还不错，欢迎赞助开发者。</p>
+                    <p>【赞助后就当买激活码了 :) 】</p>
+                    <img src="https://www.drevan.xyz/img/wx.png" alt="微信赞助" />
+                    <img src="https://www.drevan.xyz/img/zfb.jpg" alt="支付宝赞助" />
+                </div>
+            </div>
+            <div class="footer">
+                <p>Copyright © 2025 Oak Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
