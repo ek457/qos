@@ -76,6 +76,11 @@ a, a:hover, a:active, a:visited {
     max-width: 800px;
 }
 
+.markdown-body a {
+    color: #007bff;
+    text-decoration: none;
+}
+
 .sidebar {
     display: none;
     position: fixed;
@@ -88,6 +93,7 @@ a, a:hover, a:active, a:visited {
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     z-index: 100;
     margin-top: 30px;
+    overflow: auto;
 }
 
 .sidebar ul {
