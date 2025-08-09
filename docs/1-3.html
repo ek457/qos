@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" />
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="style.css">
+    <title>pip换源帮助 - Quarter OS 官方文档</title>
+</head>
+<body>
+    <!-- 标题栏 -->
+    <div class="header" id="header"></div>
+    <!-- 添加菜单栏 -->
+    <div class="sidebar" id="sidebar"></div>
+    <script src="hs.js"></script>
+    <!-- 内容 -->
+    <div class="container">
+        <div class="markdown-body">
+            <h1>pip 换源帮助</h1>
+            <p>因为有些地区的网络环境连接到Pypi官方源不稳定或速度很慢（比如中国大陆），所以您可以根据您所在的网络环境<strong>自行决定</strong>是否换源以提升您在安装模块时的网络连接体验</p>
+            <h2>常用镜像源</h2>
+            <p><strong>Pypi官方源</strong>：<a href="https://pypi.org/simple/">https://pypi.org/simple/</a> （用于切换回官方源）</p>
+            <p><strong>清华源</strong>：<a
+                    href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></p>
+            <p><strong>阿里源</strong>：<a
+                    href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a></p>
+            <p><strong>华为源</strong>： <a
+                    href="https://repo.huaweicloud.com/repository/pypi/simple/">https://repo.huaweicloud.com/repository/pypi/simple/</a>
+            </p>
+            <p><strong>腾讯源</strong>：<a
+                    href="https://mirrors.cloud.tencent.com/pypi/simple/">https://mirrors.cloud.tencent.com/pypi/simple/</a></p>
+            <p><strong>中科大源</strong>：<a
+                    href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+            <h2>通用方法</h2>
+            <h3>（下面的 <code>mirror_url</code> 请替换为镜像站的URL）</h3>
+            <p>在<strong>虚拟环境之外</strong>，首先先更新一遍 pip：</p>
+            <pre><code class="language-bash">python -m pip install --upgrade pip</code></pre>
+            <p>如果网络质量不佳，可以先临时使用国内源更新pip：</p>
+            <pre><code class="language-bash">python -m pip install -i [mirror_url] --upgrade pip</code></pre>
+            <p>运行以下命令来切换默认镜像源：</p>
+            <pre><code class="language-bash">pip config set global.index-url [mirror_url]</code></pre>
+            <p>如果您只是想临时使用镜像源，可以运行以下命令：</p>
+            <pre><code class="language-bash">pip install -i [mirror_url] [package_name]
+# [package_name] 是你要安装的包的名称</code></pre>
+            <p>如果你想同时保存多个镜像源，可以运行以下命令：</p>
+            <pre><code class="language-bash">pip config set global.extra-index-url "[url1] [url2]..."
+# [url1] [url2]... 是你要添加的镜像源的URL
+# 注意，在本命令中，URL请加英文双引号
+
+# 例如：
+pip config set global.extra-index-url "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple" "https://mirrors.aliyun.com/pypi/simple/"
+# 这条命令会将清华源和阿里源添加到镜像源列表中</code></pre>
+            <h2>常见问题</h2>
+            <h3>如何查看当前的镜像源？</h3>
+            <pre><code class="language-bash">pip config list</code></pre>
+            <h3>如何清空已添加的镜像源列表？</h3>
+            <pre><code class="language-bash">pip config unset global.index-url</code></pre>
+            <blockquote class="markdown-alert markdown-alert-warning">
+                <p>使用本命令后请重新设置镜像源，否则可能导致后续 pip 在安装包时出现错误。</p>
+            </blockquote>
+            <blockquote class="markdown-alert markdown-alert-note">
+                <p>在Linux系统环境中，可能需要使用 <code>python3 -m pip</code> 来替代 <code>pip</code> 命令。</p>
+            </blockquote>
+            <hr>
+            <div align="center">
+                <p>Written by <a href="https://github.com/ElofHew">ElofHew</a>.</p>
+                <p>© 2025 <a href="https://os.drevan.xyz/">Oak Studio</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

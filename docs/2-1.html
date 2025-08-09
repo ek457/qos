@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" />
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quarter OS 快速使用指南 - Quarter OS 官方文档</title>
+</head>
+<body>
+    <!-- 标题栏 -->
+    <div class="header" id="header"></div>
+    <!-- 添加菜单栏 -->
+    <div class="sidebar" id="sidebar"></div>
+    <script src="hs.js"></script>
+    <!-- 内容 -->
+    <div class="container">
+        <div class="markdown-body">
+            <h1>Quarter OS 快速使用指南</h1>
+            <h2>下载安装</h2>
+            <p>下载QOS Release：<a href="https://github.com/ElofHew/QOS/releases">GitHub Release</a></p>
+            <p>如果你想参与开发，可以直接下载源代码：<a href="https://github.com/ElofHew/QOS">GitHub Repository</a></p>
+            <p>（注意，可能遇到bug或不稳定的功能，请不要在生产环境中使用）</p>
+            <p>终端运行：<code>git clone https://github.com/ElofHew/QOS.git</code></p>
+            <h2>配置并启动QOS</h2>
+            <h3>① 安装Python 3.10及以上版本</h3>
+            <p>请详阅 <a href="Install_Python3">Python3 安装帮助</a></p>
+            <h3>② 配置一个Python虚拟环境</h3>
+            <p>请详阅 <a href="Set_PythonVenv">Python虚拟环境帮助</a></p>
+            <h3>③ 激活虚拟环境</h3>
+            <pre><code class="language-powershell"># Windows
+# 例如虚拟环境名为 qosvenv
+.\qosvenv\Scripts\Activate.ps1</code></pre>
+            <pre><code class="language-bash"># Linux/macOS
+# 例如虚拟环境名为 qosvenv
+source ./qosvenv/bin/activate</code></pre>
+            <h3>④ 在虚拟环境中安装依赖</h3>
+            <p>找到本存储库根目录的 <code>requirements.txt</code> 文件，使用 pip 安装依赖：</p>
+            <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+            <blockquote class="markdown-alert markdown-alert-tip">
+                <p>如果你所在地区访问pypi官方源的速度较慢，可以尝试换源，详阅 <a href="Change_pip_Mirror">pip换源帮助</a></p>
+            </blockquote>
+            <h3>⑤ 在虚拟环境中运行Quarter OS</h3>
+            <p><strong>注意，对于Windows系统，请在PowerShell中运行，而非cmd或其他命令行。</strong> Linux/macOS用户请在系统自带的终端中运行。</p>
+            <p>进入Quarter OS文件夹，并在此处打开终端，输入以下命令：</p>
+            <pre><code class="language-powershell"># Windows
+pytthon qos.py</code></pre>
+            <pre><code class="language-bash"># Linux/macOS
+python3 qos.py</code></pre>
+            <p>然后 Quarter OS 就会启动。</p>
+            <h2>内置账户密码</h2>
+            <p>通常情况下，当你第一次启动Quarter OS时，它会进入OOBE（Out-of-Box Experience，即开箱即用）阶段，会让你创建一个用户名和密码。所以不需要用到内置的 <code>root</code>、<code>admin</code>、<code>guest</code> 等账户。但在这里也列出这些账户的密码以备用：
+            </p>
+            <ul>
+                <li>root：<code>123456</code></li>
+                <li>admin：<code>123456</code></li>
+                <li>guest：<code>无密码</code></li>
+            </ul>
+            <hr>
+            <div align="center">
+                <p>Written by <a href="https://github.com/ElofHew">ElofHew</a></p>
+                <p>© 2025 <a href="https://os.drevan.xyz/">Oak Studio</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

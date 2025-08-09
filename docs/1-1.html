@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" />
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Python 3 安装帮助 - Quarter OS 官方文档</title>
+</head>
+<body>
+    <!-- 标题栏 -->
+    <div class="header" id="header"></div>
+    <!-- 添加菜单栏 -->
+    <div class="sidebar" id="sidebar"></div>
+    <script src="hs.js"></script>
+    <!-- 内容 -->
+    <div class="container">
+        <div class="markdown-body">
+            <h1>Python 3 安装帮助</h1>
+            <p><em><strong>Quarter OS 最低支持 Python 3.10 版本！</strong></em></p>
+            <p><em><strong>推荐使用 Python 3.12 及以上版本。</strong></em></p>
+            <h2>对于 Windows 用户</h2>
+            <p><strong>（最低支持Windows 8.1）</strong></p>
+            <h3>① 前往 <a href="https://www.python.org/downloads/">Python 官网</a> 或 <a
+                    href="https://mirrors.aliyun.com/python-release/">阿里云镜像源</a> 下载 <code>exe</code> 或 <code>msi</code> 安装包。</h3>
+            <p><img src="../img/pythonorg.png" alt="Python 下载页面"></p>
+            <p><img src="../img/aliyunwin.png" alt="阿里云镜像源"></p>
+            <p>下载完成后直接安装即可。</p>
+            <blockquote>
+                <p>注意：安装界面中，请勾选 <code>Add Python 3.x to PATH</code> 选项。</p>
+            </blockquote>
+            <h3>② （对于 Windows 10/11 用户）通过<code>winget</code>命令安装：</h3>
+            <pre><code class="language-powershell"># 查找Python版本
+winget search Python.Python
+# 比如要下载Python3.12
+winget install --id Python.Python.3.12 --source winget --scope machine</code></pre>
+            <h3>③ （对于 Windows 10/11 用户）直接在Microsoft Store搜索 <code>Python 3</code> 安装。</h3>
+            <p><img src="../img/msstore.png" alt="Python 3 安装"></p>
+            <h2>对于 macOS 用户</h2>
+            <p><strong>（最低支持 macOS 10.9 Mavericks）</strong></p>
+            <h3>① 前往 <a href="https://www.python.org/downloads/">Python 官网</a> 或 <a
+                    href="https://mirrors.aliyun.com/python-release/">阿里云镜像源</a> 下载 <code>dmg</code> 安装包。</h3>
+            <p><img src="../img/pythonorg.png" alt="Python 下载页面"></p>
+            <p><img src="../img/aliyunmac.png" alt="阿里云镜像源"></p>
+            <h3>② 或者使用 Homebrew 安装 Python3：</h3>
+            <pre><code class="language-bash"># 因为macOS内置Python2，所以这里要安装"python3"
+brew install python3</code></pre>
+            <h2>对于 Linux 用户</h2>
+            <p><strong>（最低支持 glibc 2.17，若低于该版本需自行编译Python3）</strong></p>
+            <h3>请根据您的发行版的包管理器安装 Python3：</h3>
+            <h3>Debian/Ubuntu：</h3>
+            <p><strong>（最低支持：Debian 10 Buster、Ubuntu 20.04 LTS Focal）</strong></p>
+            <pre><code class="language-bash">sudo apt-get install python3</code></pre>
+            <h3>CentOS/Fedora：</h3>
+            <p><strong>（最低支持：CentOS 8 Stream、Fedora 32）</strong></p>
+            <pre><code class="language-bash">sudo dnf install python3</code></pre>
+            <p>Arch Linux：</p>
+            <p><strong>（最低支持：未知）</strong></p>
+            <pre><code class="language-bash">sudo pacman -S python</code></pre>
+            <p><em><strong>注意！</strong></em></p>
+            <p>因为有些Linux发行版中自带Python3，但通常<strong>没有提供完整版</strong>。</p>
+            <p>比如 <strong>Ubuntu 24.04 LTS Noble</strong> 自带Python 3.12.3，但没有pip、venv等工具。</p>
+            <p>所以，我们需要安装完整版的Python 3。</p>
+            <pre><code class="language-bash"># 更新软件源
+sudo apt-get update
+sudo apt-get upgrade
+
+# 安装Python 3 完整版，比如安装Python3.12完整版
+sudo apt-get install python3.12-full
+
+# 验证安装成功
+python3.12 -v</code></pre>
+            <hr>
+            <div align="center">
+                <p>Written by <a href="https://github.com/ElofHew">ElofHew</a>.</p>
+                <p>© 2025 <a href="https://os.drevan.xyz/">Oak Studio</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

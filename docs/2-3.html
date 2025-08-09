@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" />
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quarter OS 命令功能帮助 - Quarter OS 官方文档</title>
+</head>
+<body>
+    <!-- 标题栏 -->
+    <div class="header" id="header"></div>
+    <!-- 添加菜单栏 -->
+    <div class="sidebar" id="sidebar"></div>
+    <script src="hs.js"></script>
+    <!-- 内容 -->
+    <div class="container">
+        <div class="markdown-body">
+            <h1>Quarter OS 命令功能帮助</h1>
+            <h2>系统内置命令</h2>
+            <p><strong>（不需要参数的命令）</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>命令</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>pwd</td>
+                        <td>显示当前工作目录</td>
+                    </tr>
+                    <tr>
+                        <td>cwd</td>
+                        <td>显示真实的当前工作目录</td>
+                    </tr>
+                    <tr>
+                        <td>help</td>
+                        <td>显示可用命令列表</td>
+                    </tr>
+                    <tr>
+                        <td>about</td>
+                        <td>显示关于QOS的信息</td>
+                    </tr>
+                    <tr>
+                        <td>version</td>
+                        <td>显示QOS的系统版本</td>
+                    </tr>
+                    <tr>
+                        <td>whoami</td>
+                        <td>显示当前用户</td>
+                    </tr>
+                    <tr>
+                        <td>time</td>
+                        <td>显示当前时间</td>
+                    </tr>
+                    <tr>
+                        <td>date</td>
+                        <td>显示当前日期</td>
+                    </tr>
+                    <tr>
+                        <td>sysinfo</td>
+                        <td>显示系统信息</td>
+                    </tr>
+                    <tr>
+                        <td>clear</td>
+                        <td>清空控制台</td>
+                    </tr>
+                    <tr>
+                        <td>eula</td>
+                        <td>显示QOS最终用户许可协议</td>
+                    </tr>
+                    <tr>
+                        <td>exit</td>
+                        <td>退出QOS</td>
+                    </tr>
+                    <tr>
+                        <td>reboot</td>
+                        <td>重启QOS</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>（需要参数的命令）</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>命令</th>
+                        <th>描述</th>
+                        <th>用法</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cat</td>
+                        <td>显示文件内容</td>
+                        <td>cat &lt;文件名&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>echo</td>
+                        <td>在控制台上显示消息</td>
+                        <td>echo &lt;消息&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>cp</td>
+                        <td>复制文件或目录</td>
+                        <td>cp &lt;源文件/目录&gt; &lt;目标文件/目录&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>mv</td>
+                        <td>移动文件或目录</td>
+                        <td>mv &lt;源文件/目录&gt; &lt;目标文件/目录&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>ls</td>
+                        <td>显示目录中的文件和目录列表</td>
+                        <td>ls &lt;目录(空则当前目录)&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>cd</td>
+                        <td>更改当前目录</td>
+                        <td>cd &lt;目录&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>touch</td>
+                        <td>创建新文件</td>
+                        <td>touch &lt;文件名&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>edit</td>
+                        <td>编辑文件</td>
+                        <td>edit &lt;文件名&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>mkdir</td>
+                        <td>创建新目录</td>
+                        <td>mkdir &lt;目录名&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>rename</td>
+                        <td>重命名文件或目录</td>
+                        <td>rename &lt;源文件/目录&gt; &lt;目标文件/目录&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>rm</td>
+                        <td>删除文件或目录</td>
+                        <td>rm &lt;文件/目录&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>ping</td>
+                        <td>测试网络连接</td>
+                        <td>ping &lt;域名或IP地址&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>down</td>
+                        <td>下载文件</td>
+                        <td>down &lt;文件URL&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>第三方软件包管理器</h2>
+            <p><strong>（Biscuit软件包管理器）</strong></p>
+            <ul>
+                <li><code>biscuit</code> : Quarter OS官方直属软件包管理器。</li>
+                <li><code>bkt</code>/<code>bpm</code>/<code>pkg</code>/<code>pm</code> : 调用Biscuit的易记别名。</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>命令</th>
+                        <th>描述</th>
+                        <th>用法</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>install</td>
+                        <td>安装(本地)软件包</td>
+                        <td>biscuit install &lt;文件路径&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>remove</td>
+                        <td>卸载软件包</td>
+                        <td>biscuit remove &lt;软件包名&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>search</td>
+                        <td>搜索软件包</td>
+                        <td>biscuit search &lt;软件名关键字&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>list</td>
+                        <td>列出已安装的软件包</td>
+                        <td>biscuit list</td>
+                    </tr>
+                    <tr>
+                        <td>get</td>
+                        <td>从软件仓库获取并安装软件包</td>
+                        <td>biscuit get &lt;软件包名&gt; (&lt;指定包版本&gt;)</td>
+                    </tr>
+                    <tr>
+                        <td>mirror</td>
+                        <td>更改软件包镜像源</td>
+                        <td>biscuit mirror &lt;镜像源地址&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>（Shizuku软件包管理器）</strong></p>
+            <ul>
+                <li><code>shizuku</code> : PY OS Improved的软件包管理器，Quarter OS对其进行兼容。</li>
+                <li><code>szk</code> : 调用Shizuku的易记别名。</li>
+            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>命令</th>
+                        <th>描述</th>
+                        <th>用法</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>install</td>
+                        <td>安装软件包</td>
+                        <td>shizuku install &lt;软件包名&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>remove</td>
+                        <td>卸载软件包</td>
+                        <td>shizuku remove &lt;软件包名&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>list</td>
+                        <td>列出已安装的软件包</td>
+                        <td>shizuku list</td>
+                    </tr>
+                    <tr>
+                        <td>run</td>
+                        <td>启动Shizuku软件包</td>
+                        <td>shizuku run &lt;软件包名&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>系统工具</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>命令</th>
+                        <th>描述</th>
+                        <th>用法</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>activate</td>
+                        <td>激活Quarter OS</td>
+                        <td>activate &lt;-c/-d/-ck&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>backup</td>
+                        <td>备份Quarter OS</td>
+                        <td>backup &lt;-c/-l/-r&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>settings</td>
+                        <td>Quarter OS系统设置</td>
+                        <td>settings &lt;-s/-a/-g&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>系统应用</h2>
+            <blockquote class="markdown-alert markdown-alert-tip">
+                <p>系统应用属于<strong>Biscuit软件包</strong>类型</p>
+            </blockquote>
+            <table>
+                <thead>
+                    <tr>
+                        <th>应用</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>calc</td>
+                        <td>Quarter OS计算器</td>
+                    </tr>
+                    <tr>
+                        <td>calendar</td>
+                        <td>Quarter OS日历</td>
+                    </tr>
+                    <tr>
+                        <td>console</td>
+                        <td>Python交互环境控制台</td>
+                    </tr>
+                    <tr>
+                        <td>weather</td>
+                        <td>Quarter OS天气应用</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <div align="center">
+                <p>Writen by <a href="https://github.com/ElofHew">ElofHew</a>.</p>
+                <p>© 2025 <a href="https://os.drevan.xyz/">Oak Studio</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
