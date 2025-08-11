@@ -15,8 +15,8 @@ document.getElementById("sidebar").innerHTML = `
     <li><a href="#">帮助文档：主页面</a></li>
     <ul>
         <li><a href="https://ek457.github.io/qos/docs/">官网文档</a></li>
-        <li><a href="https://github.com/ElofHew/QOS/wiki/Home/">GitHub Wiki</a></li>
-        <li><a href="https://gitee.com/ElofHew/QOS/wikis/Home/">Gitee Wiki</a></li>
+        <li><a href="https://github.com/ElofHew/QOS/wiki/Home/" target="_blank">GitHub Wiki</a></li>
+        <li><a href="https://gitee.com/ElofHew/QOS/wikis/Home/" target="_blank">Gitee Wiki</a></li>
     </ul>
     <li><a href="#">配置环境帮助文档</a></li>
     <ul>
@@ -30,6 +30,11 @@ document.getElementById("sidebar").innerHTML = `
         <li><a href="2-2.html">激活帮助</a></li>
         <li><a href="2-3.html">命令帮助</a></li>
     </ul>
+</ul>
+<h3>仓库</h3>
+<ul>
+    <li><a href="https://github.com/ElofHew/QOS" target="_blank">GitHub</a></li>
+    <li><a href="https://gitee.com/ElofHew/QOS" target="_blank">Gitee</a></li>
 </ul>
 `;
 

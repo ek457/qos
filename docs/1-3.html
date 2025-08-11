@@ -33,8 +33,12 @@
                     href="https://mirrors.cloud.tencent.com/pypi/simple/">https://mirrors.cloud.tencent.com/pypi/simple/</a></p>
             <p><strong>中科大源</strong>：<a
                     href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+            <hr>
             <h2>通用方法</h2>
-            <h3>（下面的 <code>mirror_url</code> 请替换为镜像站的URL）</h3>
+            <h4>下面的 <code>[mirror_url]</code> 请替换为镜像站的URL</h4>
+            <blockquote class="markdown-alert markdown-alert-note">
+                <p>在Linux系统环境中，可能需要使用 <code>python3 -m pip</code> 来替代 <code>pip</code> 命令。</p>
+            </blockquote>
             <p>在<strong>虚拟环境之外</strong>，首先先更新一遍 pip：</p>
             <pre><code class="language-bash">python -m pip install --upgrade pip</code></pre>
             <p>如果网络质量不佳，可以先临时使用国内源更新pip：</p>
@@ -52,6 +56,7 @@
 # 例如：
 pip config set global.extra-index-url "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple" "https://mirrors.aliyun.com/pypi/simple/"
 # 这条命令会将清华源和阿里源添加到镜像源列表中</code></pre>
+            <hr>
             <h2>常见问题</h2>
             <h3>如何查看当前的镜像源？</h3>
             <pre><code class="language-bash">pip config list</code></pre>
@@ -59,9 +64,6 @@ pip config set global.extra-index-url "https://mirrors.tuna.tsinghua.edu.cn/pypi
             <pre><code class="language-bash">pip config unset global.index-url</code></pre>
             <blockquote class="markdown-alert markdown-alert-warning">
                 <p>使用本命令后请重新设置镜像源，否则可能导致后续 pip 在安装包时出现错误。</p>
-            </blockquote>
-            <blockquote class="markdown-alert markdown-alert-note">
-                <p>在Linux系统环境中，可能需要使用 <code>python3 -m pip</code> 来替代 <code>pip</code> 命令。</p>
             </blockquote>
             <hr>
             <div align="center">

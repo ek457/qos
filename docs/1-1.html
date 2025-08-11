@@ -19,10 +19,12 @@
     <div class="container">
         <div class="markdown-body">
             <h1>Python 3 安装帮助</h1>
-            <p><em><strong>Quarter OS 最低支持 Python 3.10 版本！</strong></em></p>
-            <p><em><strong>推荐使用 Python 3.12 及以上版本。</strong></em></p>
+            <h2>前言</h2>
+            <p>对于Quarter OS，需要的最低Python版本为 <b>Python 3.10</b>。</p>
+            <p>如果允许，我们更建议您使用 <b>Python 3.12</b> 版本。因为这和Quarter OS的开发环境一致。</p>
+            <hr>
             <h2>对于 Windows 用户</h2>
-            <p><strong>（最低支持Windows 8.1）</strong></p>
+            <p>Windows端最低支持<b>Windows 8.1</b>，但Quarter OS需要的最低版本为<b>Windows 10</b>。</p>
             <h3>① 前往 <a href="https://www.python.org/downloads/">Python 官网</a> 或 <a
                     href="https://mirrors.aliyun.com/python-release/">阿里云镜像源</a> 下载 <code>exe</code> 或 <code>msi</code> 安装包。</h3>
             <p><img src="../img/pythonorg.png" alt="Python 下载页面"></p>
@@ -31,36 +33,46 @@
             <blockquote>
                 <p>注意：安装界面中，请勾选 <code>Add Python 3.x to PATH</code> 选项。</p>
             </blockquote>
-            <h3>② （对于 Windows 10/11 用户）通过<code>winget</code>命令安装：</h3>
+            <h3>② 通过<code>winget</code>命令安装：</h3>
             <pre><code class="language-powershell"># 查找Python版本
 winget search Python.Python
 # 比如要下载Python3.12
 winget install --id Python.Python.3.12 --source winget --scope machine</code></pre>
-            <h3>③ （对于 Windows 10/11 用户）直接在Microsoft Store搜索 <code>Python 3</code> 安装。</h3>
+            <blockquote class="markdown-alert markdown-alert-warning">
+                <p>注意：本方法仅适用于Windows 10/11，且需要先安装 <a href="https://docs.microsoft.com/zh-cn/windows/package-manager/winget/">winget</a> (通常只针对于企业版或没有软件包安装程序的用户)。</p>
+            </blockquote>
+            <h3>③ 直接在Microsoft Store搜索 Python 3 安装。</h3>
             <p><img src="../img/msstore.png" alt="Python 3 安装"></p>
+            <blockquote class="markdown-alert markdown-alert-warning">
+                <p>注意：本方法仅适用于Windows 10/11，且系统已带有Microsoft Store的用户。</p>
+            </blockquote>
+            <hr>
             <h2>对于 macOS 用户</h2>
-            <p><strong>（最低支持 macOS 10.9 Mavericks）</strong></p>
+            <p>macOS端最低支持 <b>macOS 10.9 Mavericks</b>，但Quarter OS主要开发环境为Windows和Linux，所以在macOS上使用Quarter OS可能存在一些问题。</p>
             <h3>① 前往 <a href="https://www.python.org/downloads/">Python 官网</a> 或 <a
                     href="https://mirrors.aliyun.com/python-release/">阿里云镜像源</a> 下载 <code>dmg</code> 安装包。</h3>
             <p><img src="../img/pythonorg.png" alt="Python 下载页面"></p>
             <p><img src="../img/aliyunmac.png" alt="阿里云镜像源"></p>
-            <h3>② 或者使用 Homebrew 安装 Python3：</h3>
+            <h3>② 使用 <code>Homebrew</code> 安装 Python3：</h3>
             <pre><code class="language-bash"># 因为macOS内置Python2，所以这里要安装"python3"
 brew install python3</code></pre>
+            <hr>
             <h2>对于 Linux 用户</h2>
-            <p><strong>（最低支持 glibc 2.17，若低于该版本需自行编译Python3）</strong></p>
-            <h3>请根据您的发行版的包管理器安装 Python3：</h3>
+            <p>最低支持 <b>glibc 2.17</b>，若低于该版本可能需要自行编译。绝大部分常见的Linux发行版均满足此要求。</p>
             <h3>Debian/Ubuntu：</h3>
             <p><strong>（最低支持：Debian 10 Buster、Ubuntu 20.04 LTS Focal）</strong></p>
             <pre><code class="language-bash">sudo apt-get install python3</code></pre>
             <h3>CentOS/Fedora：</h3>
             <p><strong>（最低支持：CentOS 8 Stream、Fedora 32）</strong></p>
             <pre><code class="language-bash">sudo dnf install python3</code></pre>
-            <p>Arch Linux：</p>
+            <h3>Arch Linux：</h3>
             <p><strong>（最低支持：未知）</strong></p>
             <pre><code class="language-bash">sudo pacman -S python</code></pre>
-            <p><em><strong>注意！</strong></em></p>
-            <p>因为有些Linux发行版中自带Python3，但通常<strong>没有提供完整版</strong>。</p>
+            <h3>其他发行版：</h3>
+            <p>请自行查找教程，并使用对应的软件包管理器安装Python 3。</p>
+            <hr>
+            <h2>Linux注意事项</h2>
+            <p>绝大部分的Linux发行版中自带Python3，但通常<strong>版本过低</strong>或<strong>没有提供完整版</strong>。</p>
             <p>比如 <strong>Ubuntu 24.04 LTS Noble</strong> 自带Python 3.12.3，但没有pip、venv等工具。</p>
             <p>所以，我们需要安装完整版的Python 3。</p>
             <pre><code class="language-bash"># 更新软件源
@@ -72,6 +84,7 @@ sudo apt-get install python3.12-full
 
 # 验证安装成功
 python3.12 -v</code></pre>
+            <p>至此，Linux端的Python 3安装完毕。</p>
             <hr>
             <div align="center">
                 <p>Written by <a href="https://github.com/ElofHew">ElofHew</a>.</p>
